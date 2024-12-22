@@ -9,7 +9,6 @@ db = Database()
 dp = Dispatcher()
 router = Router()
 
-# Initialize the bot with DefaultBotProperties
 bot = Bot(
     token=BOT_TOKEN, 
     default=DefaultBotProperties(parse_mode=ParseMode.HTML))
