@@ -6,7 +6,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from keyboards.defoult.keybords import * 
 
-ADMIN = 5471452269
+ADMIN = "ADMIN_ID"
 
 class MSG(StatesGroup):
     messaga = State()
@@ -22,7 +22,7 @@ class Users(StatesGroup):
 @router.message(CommandStart())
 async def start(msg: Message):
     if msg.from_user.id == ADMIN:
-        await msg.answer(f"<b>Assalomu aleykum {msg.from_user.full_name}!</b>")
+        await msg.answer(f"<b>Assalomu aleykum {msg.from_user.full_name}!</b>\n\n/users - userlarni ko'rish")
         # user_info = db.select_users()
         # if user_info:
         #     await msg.answer("Foydalanuvchilar ro'yxati:")
@@ -41,12 +41,16 @@ async def sel_users(msg: Message):
             await msg.answer("Foydalanuvchilar ro'yxati:")
             for user in user_info:
                 user_id, name, raqam = user
-                await msg.answer(f"Foydalanuvchi ID: {user_id}\nIsm: {name}\nRaqam: {raqam}")   
+                await msg.answer(f"Foydalanuvchi ID: {user_id}\nIsm: {name}\nRaqam: {raqam}") 
+        if not user_info:
+            await msg.answer("Hech qanday user topilmadi")  # No user found message
+    else:
+        await msg.answer("No user")  
 
 
 @router.message(Command("help"))
 async def yordam(msg: Message):
-    await msg.answer(f"Savollaringiz bo'lsa <b>@zero1max</b> ga murojat qiling")
+    await msg.answer(f"Savollaringiz bo'lsa <b>@zero_1_max</b> ga murojat qiling")
 
 #-------------------- Register ---------------------
 @router.message(F.text == "Ro'yhatdan o'tish📋")
