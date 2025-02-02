@@ -100,7 +100,7 @@ async def answeruser(call: CallbackQuery, state: FSMContext):
     user_id = call.data.split(':')
     await state.update_data(user_id = user_id[1])
     await state.set_state(Answer.asnwer)
-    await bot.send_message(ADMIN, text= f"ID: {user_id[1]}\nJavob yozishingiz mumkin Muhammadjon")
+    await bot.send_message(ADMIN, text= f"ID: {user_id[1]}\nJavob yozishingiz mumkin Admin")
 
 @router.message(Answer.asnwer)
 async def answer(msg:Message, state:FSMContext):
@@ -169,4 +169,4 @@ async def back(msg: Message):
 #------------------------Nothing----------------
 @router.message()
 async def nothing(msg: Message):
-    await msg.answer('Cunmadim?')
+    await msg.answer('Chunmadim?')
