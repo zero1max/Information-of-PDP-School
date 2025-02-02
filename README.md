@@ -11,9 +11,9 @@ Bu loyiha PDP School haqida ma'lumot beruvchi Telegram botini taqdim etadi. Bot 
 
 ## Botdan foydalanish
 
-Botdan foydalanish uchun quyidagi havolani bosing: [PDP School Bot](https://t.me/PDP_School_Bot)
+Botdan foydalanish uchun quyidagi havolani bosing: [PDP School Bot](https://t.me/pdpschool_info_bot)
 
-Yoki Telegramda `@PDP_School_Bot` ni qidiring.
+Yoki Telegramda `@pdpschool_info_bot` ni qidiring.
 
 ## O'rnatish (Mahalliy server uchun)
 
